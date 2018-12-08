@@ -1,7 +1,6 @@
-const Command = require('command');
 
 module.exports = function boxOpener(dispatch){
-	const command = Command(dispatch)
+	const command = dispatch.command || dispatch.require.command;
 	
 	let	hooks = [],
 		enabled = false,
@@ -36,7 +35,7 @@ module.exports = function boxOpener(dispatch){
 		if(arg === "0")
 		{
 			useDelay = false;
-			delay = 5000;
+			delay = 5500;
 			command.message("Turning OFF minimum box opening delay, enjoy the speed");
 		}
 		else if(!isNaN(arg))
