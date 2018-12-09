@@ -103,7 +103,7 @@ module.exports = function boxOpener(dispatch){
 		});
 		
 		hook('S_SYSTEM_MESSAGE_LOOT_ITEM', 1, event => {
-			if(!gacha_detected && !isLooting)
+			if(!gacha_detected && !isLooting && boxEvent)
 			{
 				isLooting = true;
 				statOpened++;
@@ -116,12 +116,15 @@ module.exports = function boxOpener(dispatch){
 		});
 		
 		hook('S_GACHA_END', 1, event => {
+			if(boxEvent)
+			{
 				statOpened++;
 				if(!useDelay)
 				{
 					clearTimeout(timer);
 					openBox();
 				}
+			}
 		});
 		
 		hook('S_SYSTEM_MESSAGE', 1, event => {
@@ -175,6 +178,7 @@ module.exports = function boxOpener(dispatch){
 			clearTimeout(timer);
 			enabled = false;
 			gacha_detected = false;
+			boxEvent = null;
 			if(useDelay && statOpened == 0)
 			{
 				statOpened = statUsed;
