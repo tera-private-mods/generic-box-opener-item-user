@@ -1,9 +1,9 @@
 {
 	"disableAutoUpdate": false,
-	"name": "Generic Box Opener & Item user",
+	"name": "generic-box-opener-item-user",
 	"author": "Owyn",
-	"description": "Opens boxes",
-	"options": { "niceName": "<font color='#FDD017'>Box</font>" },
+	"description": "Mass-Opens boxes",
+	"options": { "niceName": "<font color='#FDD017'>Box</font>", "guiName": "Generic Box Opener & Item user" },
 	"servers": ["https://raw.githubusercontent.com/Owyn/generic-box-opener-item-user/master/"],
 	"supportUrl": "https://github.com/Owyn/generic-box-opener-item-user/issues"
 }
