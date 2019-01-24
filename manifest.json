@@ -1,7 +1,7 @@
 {
 	"files": {
 		"README.md": "4a82b827288a9d7f34cc1de1ff869ca1371d9a0144b960cf33f5501a56ff73b4",
-		"index.js": "cf7f6c4d68d47102fe1bd1d150a1a53007886daa82456aa402af2a530c70d3ff",
+		"index.js": "975dc09459d74fe3d8f3fd3a4cffd963b66b712bb7d28c715973f149469c707d",
 		"module.json": "c40095006cfede1be501b2c0204dd2d778cd963dc0cb26e33dc3c8a839123fab"
 	},
 	"defs": {
@@ -10,7 +10,7 @@
 		"C_USE_ITEM": 3,
 		"S_GACHA_END": 1,
 		"S_GACHA_START": 1,
-		"S_INVEN": 16,
+		"S_INVEN": 17,
 		"S_SYSTEM_MESSAGE": 1,
 		"S_SYSTEM_MESSAGE_LOOT_ITEM": 1
 	}
