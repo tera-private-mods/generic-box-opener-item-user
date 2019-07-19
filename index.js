@@ -91,6 +91,7 @@ module.exports = function boxOpener(dispatch){
 		
 			if(scanning){
 				boxEvent = event;
+				boxEvent.dbid = 0n; // to open all inv slots
 				boxId = event.id;
 				command.message("Box set to: "+boxId+", proceeding to auto-open it with "  + (useDelay ? "a minimum " + (delay / 1000) + " sec delay" : "no delay" ));
 				scanning = false;
