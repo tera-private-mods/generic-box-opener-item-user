@@ -1,7 +1,7 @@
 {
 	"files": {
-		"README.md": "4a82b827288a9d7f34cc1de1ff869ca1371d9a0144b960cf33f5501a56ff73b4",
-		"index.js": "7dc7d6ce42c5cf18457fd93c3d18b1f977e32814e72081ff4fb7c861f2c8d088",
+		"README.md": "8b1704eff4c6f1989542d77d59666e28bfda029392946c5688d88af94cced028",
+		"index.js": "57e8472449f0eb606187fd45189dcb40016eac4f5ba97dfa483b7116769c3dfc",
 		"module.json": "c40095006cfede1be501b2c0204dd2d778cd963dc0cb26e33dc3c8a839123fab"
 	},
 	"defs": {
@@ -10,7 +10,6 @@
 		"C_USE_ITEM": 3,
 		"S_GACHA_END": 1,
 		"S_GACHA_START": 1,
-		"S_INVEN": 18,
 		"S_SYSTEM_MESSAGE": 1,
 		"S_SYSTEM_MESSAGE_LOOT_ITEM": 1
 	}
