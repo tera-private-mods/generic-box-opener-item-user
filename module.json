@@ -1,9 +1,12 @@
 {
-	"disableAutoUpdate": false,
-	"name": "generic-box-opener-item-user",
-	"author": "Owyn",
-	"description": "Mass-Opens boxes",
-	"options": { "niceName": "<font color='#FDD017'>Box</font>", "guiName": "Generic Box Opener & Item user" },
-	"servers": ["https://raw.githubusercontent.com/Owyn/generic-box-opener-item-user/master/"],
-	"supportUrl": "https://github.com/Owyn/generic-box-opener-item-user/issues"
+    "disableAutoUpdate": false,
+    "name": "generic-box-opener-item-user",
+    "author": "Owyn",
+    "description": "Mass-Opens boxes",
+    "options": {
+        "niceName": "<font color='#FDD017'>Box</font>",
+        "guiName": "Generic Box Opener & Item user"
+    },
+    "servers": ["https://raw.githubusercontent.com/Owyn/generic-box-opener-item-user/master/"],
+    "supportUrl": "https://github.com/Owyn/generic-box-opener-item-user/issues"
 }
