@@ -125,7 +125,7 @@ module.exports = function boxOpener(dispatch){
 		});
 		
 		hook('S_GACHA_END', 'raw', () => {
-			if(boxEvent)
+			if(boxEvent && gacha_detected)
 			{
 				dispatch.clearTimeout(timer);
 				if(useDelay) timer = dispatch.setTimeout(openBox,delay);
@@ -135,7 +135,7 @@ module.exports = function boxOpener(dispatch){
 		
 		hook('S_SYSTEM_MESSAGE', 1, event => {
 			const msg = dispatch.parseSystemMessage(event.message).id;
-			if(['SMT_ITEM_MIX_NEED_METERIAL', 'SMT_CANT_CONVERT_NOW', 'SMT_GACHA_NO_MORE_ITEM_SHORT', 'SMT_NOTI_LEFT_LIMITED_GACHA_ITEM', 'SMT_GACHA_CANCEL', 'SMT_COMMON_NO_MORE_ITEM_TO_USE', 'SMT_CANNOT_CONTINUE_CONTRACT'].includes(msg))
+			if(['SMT_ITEM_MIX_NEED_METERIAL', 'SMT_CANT_CONVERT_NOW', 'SMT_GACHA_NO_MORE_ITEM_SHORT', 'SMT_NOTI_LEFT_LIMITED_GACHA_ITEM', 'SMT_GACHA_CANCEL', 'SMT_COMMON_NO_MORE_ITEM_TO_USE'].includes(msg))
 			{
 				command.message("Box can not be opened anymore, stopping");
 				stop();
@@ -151,6 +151,12 @@ module.exports = function boxOpener(dispatch){
 				return false;
 			})
 			return false;
+		});
+
+		hook('S_CANCEL_CONTRACT', 1, event => {
+			if (!gacha_detected || event.type !== 53) return;
+			gacha_contract = 0;
+			stop();
 		});
 	}
 	
@@ -196,7 +202,7 @@ module.exports = function boxOpener(dispatch){
 		}
 		else
 		{
-			if(gacha_detected) dispatch.toServer('C_GACHA_CANCEL', 1, { id: gacha_contract });
+			if(gacha_detected && gacha_contract) dispatch.toServer('C_GACHA_CANCEL', 1, { id: gacha_contract });
 			if(useDelay && statOpened === 0) statOpened = statUsed;
 			if(!gacha_detected) statOpened += 1; // Add the box we used at start if not gacha.
 			dispatch.clearTimeout(timer);
