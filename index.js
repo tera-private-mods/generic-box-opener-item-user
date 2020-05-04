@@ -127,17 +127,15 @@ module.exports = function boxOpener(dispatch){
 		hook('S_GACHA_END', 'raw', () => {
 			if(boxEvent)
 			{
-				if(!useDelay)
-				{
-					dispatch.clearTimeout(timer);
-					process.nextTick(openBox);
-				}
+				dispatch.clearTimeout(timer);
+				if(useDelay) timer = dispatch.setTimeout(openBox,delay);
+				else process.nextTick(openBox);
 			}
 		});
 		
 		hook('S_SYSTEM_MESSAGE', 1, event => {
 			const msg = dispatch.parseSystemMessage(event.message).id;
-			if(['SMT_ITEM_MIX_NEED_METERIAL', 'SMT_CANT_CONVERT_NOW', 'SMT_GACHA_NO_MORE_ITEM_SHORT', 'SMT_NOTI_LEFT_LIMITED_GACHA_ITEM', 'SMT_GACHA_CANCEL', 'SMT_COMMON_NO_MORE_ITEM_TO_USE'].includes(msg))
+			if(['SMT_ITEM_MIX_NEED_METERIAL', 'SMT_CANT_CONVERT_NOW', 'SMT_GACHA_NO_MORE_ITEM_SHORT', 'SMT_NOTI_LEFT_LIMITED_GACHA_ITEM', 'SMT_GACHA_CANCEL', 'SMT_COMMON_NO_MORE_ITEM_TO_USE', 'SMT_CANNOT_CONTINUE_CONTRACT'].includes(msg))
 			{
 				command.message("Box can not be opened anymore, stopping");
 				stop();
