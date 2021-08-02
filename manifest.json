@@ -1,7 +1,7 @@
 {
 	"files": {
 		"README.md": "8b1704eff4c6f1989542d77d59666e28bfda029392946c5688d88af94cced028",
-		"index.js": "52da9eb99a6fddee31105920663c7bbd1101d493f285af2f9684ed7a984e2214",
+		"index.js": "ee7f63c78b8b0bdca1ce676a01d4d49b3d48827bfb522ecf1d16093c5d1732f3",
 		"module.json": "c40095006cfede1be501b2c0204dd2d778cd963dc0cb26e33dc3c8a839123fab"
 	},
 	"defs": {
@@ -12,7 +12,7 @@
 		"S_CANCEL_CONTRACT": 1,
 		"S_GACHA_END": "raw",
 		"S_GACHA_START": "raw",
-		"S_REQUEST_CONTRACT": 1,
+		"S_REQUEST_CONTRACT": [1,2],
 		"S_SYSTEM_MESSAGE": 1,
 		"S_SYSTEM_MESSAGE_LOOT_ITEM": "raw"
 	}

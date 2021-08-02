@@ -142,7 +142,7 @@ module.exports = function boxOpener(dispatch){
 			}
 		});
 		
-		hook('S_REQUEST_CONTRACT', 1, event => {
+		hook('S_REQUEST_CONTRACT', mod.majorPatchVersion > 107 ? 2 : 1, event => {
 			if(event.type !== 53) return;
 			dispatch.hookOnce('S_GACHA_START', 'raw', () => {
 				gacha_detected = true;
